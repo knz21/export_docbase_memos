@@ -54,7 +54,7 @@ const downloadMemoImages = () => {
         const memoId = memo[0]
         const title = memo[1]
         const body = memo[2]
-        const urls = body.match(/https?:\/\/[^ \)\]|\\r\\n]*\.(?:png|jpg)/g)
+        const urls = body.match(/https?:\/\/[-\/\.\w]*\.(?:png|jpg|jpeg|gif)/g)
         if (urls) {
             Logger.log(`${memoId}: ${urls.length} images (${title})`)
             const existingImageFolder = parentImageFolder.getFoldersByName(memoId)
